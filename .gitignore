@@ -24,3 +24,6 @@ local.properties
 *.iml
 out/
 **.DS_Store
+
+# Calabash files
+.irb-history
