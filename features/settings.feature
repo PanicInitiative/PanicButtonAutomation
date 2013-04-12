@@ -6,5 +6,5 @@ Feature: Settings page
     Then I see the text "Twitter"
 
   Scenario: Verify that SMSSettingsActivity is opened on SMS click
-    Given I press view with id "sms_row"
+    Given I press "SMS"
     Then I wait for the "SMSSettingsActivity" screen to appear

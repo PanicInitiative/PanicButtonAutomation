@@ -27,3 +27,5 @@ out/
 
 # Calabash files
 .irb-history
+test_servers/
+screenshot_*.png
