@@ -7,4 +7,4 @@ Feature: Settings page
 
   Scenario: Verify that SMSSettingsActivity is opened on SMS click
     Given I press "SMS"
-    Then I wait for the "SMSSettingsActivity" screen to appear
+    Then I wait up to 10 seconds for the "SMSSettingsActivity" screen to appear
