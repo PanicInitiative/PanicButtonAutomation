@@ -2,7 +2,7 @@ Feature: SMS Settings page
 
   Background: Open the SMS Settings page
     Given I press "SMS"
-    Then I wait for the "SMSSettingsActivity" screen to appear
+    Then I wait upto 10 seconds for the "SMSSettingsActivity" screen to appear
 
   Scenario: Save SMS settings
     Given I enter "123456789" into input field number 1
