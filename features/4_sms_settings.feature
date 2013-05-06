@@ -36,7 +36,17 @@ Feature: SMS Settings page
     Then I see the text "**********22"
     Then I see the text "*00"
     Then I see the text "Help me, I'm in danger testing message"
-    Then I see the text "Characters left :47"
+    Then I see the text "Characters left:"
+    Then I see the text "47"
+
+  Scenario: Display characters left for message
+    Given I long press "="
+    And I press "SMS"
+    And I see the text "Characters left:"
+    And I see the text "47"
+    When I enter text " some testing message" into field with id "message_edit_text"
+    Then I see the text "Characters left:"
+    Then I see the text "26"
 
   Scenario: Clear SMS to disable Alert activation
     Given I long press "="
@@ -49,12 +59,3 @@ Feature: SMS Settings page
     When I press view with id "sms_previous_button"
     Then I verify "activate_alert" button is "disabled"
     Then I see the text "Alert cannot be sent. please choose contacts"
-
-
-  Scenario: Display characters left for message
-    Given I long press "="
-    And I press "SMS"
-    And I see the text "Characters left :47"
-    When I enter text " some testing message" into field with id "message_edit_text"
-    Then I see the text "Characters left :26"
-
