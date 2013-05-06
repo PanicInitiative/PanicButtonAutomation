@@ -13,7 +13,7 @@ Feature: One time setup wizard
     Then I see the text "Add upto three emergency contacts"
     Then I see the text "Help me, I'm in danger"
     Then I see the text "Emergency message"
-    Then I see the text "Characters left :"
+    Then I see the text "Characters left:"
     Then I see the text "63"
     Then I see the text "+ I'm at"
     Then I see the text "http://maps.google.com/yourlocation"
