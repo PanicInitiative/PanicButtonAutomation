@@ -1,6 +1,7 @@
 @sms_settings
 Feature: SMS Settings page
 
+  @clear_sms
   Scenario: Open the SMS Settings page
     Given I press view with id "panic_button_text"
     And I press "Start"
@@ -36,6 +37,19 @@ Feature: SMS Settings page
     Then I see the text "*00"
     Then I see the text "Help me, I'm in danger testing message"
     Then I see the text "Characters left :47"
+
+  Scenario: Clear SMS to disable Alert activation
+    Given I long press "="
+    And I press "SMS"
+    And I clear input field number 1
+    And I clear input field number 2
+    And I clear input field number 3
+    And I clear input field number 4
+    And I press "Save"
+    When I press view with id "sms_previous_button"
+    Then I verify "activate_alert" button is "disabled"
+    Then I see the text "Alert cannot be sent. please choose contacts"
+
 
   Scenario: Display characters left for message
     Given I long press "="
