@@ -17,6 +17,12 @@ Feature: One time setup wizard
     Then I see the text "+ I'm at"
     Then I see the text "http://maps.google.com/yourlocation"
 
+  Scenario: Navigating back to start screen
+    Given I press "Start"
+    And I press view with id "previous_button"
+    Then I verify action button text is "Start"
+    Then I verify action button is "enabled"
+
   Scenario: Starting wizard and entering valid phone number enables saving
     Given I press "Start"
     And I enter "12345" into input field number 1
@@ -39,12 +45,29 @@ Feature: One time setup wizard
     And I enter "123456789" into input field number 1
     And I enter "222-222-2222" into input field number 2
     And I enter "100" into input field number 3
-    And I enter text "testing message" into field with id "message_edit_text"
     And I press "Save"
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
     Then I see the text "3 ways to send an emergency alert"
     Then I see the text "The Emergency Alert button in Settings..."
+
+  Scenario: Verifying the saved sms settings
+    Given I press "Start"
+    And I clear input field number 1
+    And I enter "123456789" into input field number 1
+    And I clear input field number 2
+    And I enter "222-222-2222" into input field number 2
+    And I clear input field number 3
+    And I enter "100" into input field number 3
+    And I enter text " testing message" into field with id "message_edit_text"
+    And I press "Save"
+    And I press view with id "previous_button"
+    Then I verify action button text is "Save"
+    Then I verify action button is "enabled"
+    Then I see the text "*******89"
+    Then I see the text "**********22"
+    Then I see the text "*00"
+    Then I see the text "Help me, I'm in danger testing message"
 
   Scenario: Emergency alert 2
     Given I press "Start"
