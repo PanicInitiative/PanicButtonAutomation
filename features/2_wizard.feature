@@ -17,6 +17,15 @@ Feature: One time setup wizard
     Then I see the text "+ I'm at"
     Then I see the text "http://maps.google.com/yourlocation"
 
+  @hardware_back
+  Scenario: Hardware back from sms screen takes back to start
+    Given I press "Start"
+    And I go back
+    Then I see the text "Panic Button"
+    Then I see the text "setup wizard"
+    Then I verify action button text is "Start"
+    Then I verify action button is "enabled"
+
   Scenario: Navigating back to start screen
     Given I press "Start"
     And I press view with id "previous_button"
