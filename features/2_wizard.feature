@@ -73,3 +73,12 @@ Feature: One time setup wizard
     And I press "Next"
     Then I see the text "Panic Button will now disguise itself"
     Then I see the text "Finish & activate disguise"
+
+  Scenario: Open facade
+    Given I press "Start"
+    And I press "Save"
+    And I press "Next"
+    And I press "Next"
+    And I press "Next"
+    And I press "Finish & activate disguise"
+    Then I wait upto 10 seconds for the "CalculatorActivity" screen to appear
