@@ -15,8 +15,8 @@ Feature: One time setup wizard
     Then I see the text "Emergency message"
     Then I see the text "Characters left:"
     Then I see the text "63"
-    Then I see the text "+ I'm at"
-    Then I see the text "http://maps.google.com/yourlocation"
+    Then I see the text "I'm at"
+    Then I see the text "http://maps.google.com/GPS-location"
 
   @hardware_back
   Scenario: Hardware back from sms screen takes back to start
