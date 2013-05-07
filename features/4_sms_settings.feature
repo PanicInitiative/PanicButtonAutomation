@@ -12,12 +12,12 @@ Feature: SMS Settings page
     And I press "Next"
     And I press "Finish & activate disguise"
     And I long press "="
-    And I press "SMS"
+    And I press "SMS settings"
     Then I wait upto 10 seconds for the "SMSSettingsActivity" screen to appear
 
   Scenario: Save SMS settings
     Given I long press "="
-    And I press "SMS"
+    And I press "SMS settings"
     And I clear input field number 1
     And I enter "123456789" into input field number 1
     And I enter "222-222-2222" into input field number 2
@@ -31,7 +31,7 @@ Feature: SMS Settings page
 
   Scenario: View Saved Settings
     Given I long press "="
-    And I press "SMS"
+    And I press "SMS settings"
     Then I see the text "*******89"
     Then I see the text "**********22"
     Then I see the text "*00"
@@ -41,7 +41,7 @@ Feature: SMS Settings page
 
   Scenario: Display characters left for message
     Given I long press "="
-    And I press "SMS"
+    And I press "SMS settings"
     And I see the text "Characters left:"
     And I see the text "47"
     When I enter text " some testing message" into field with id "message_edit_text"
@@ -50,7 +50,7 @@ Feature: SMS Settings page
 
   Scenario: Clear SMS to disable Alert activation
     Given I long press "="
-    And I press "SMS"
+    And I press "SMS settings"
     And I clear input field number 1
     And I clear input field number 2
     And I clear input field number 3

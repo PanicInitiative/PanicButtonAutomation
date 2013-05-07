@@ -14,11 +14,11 @@ Feature: Facade and Settings page
     Then I wait upto 10 seconds for the "SettingsActivity" screen to appear
     Then I see the text "Send emergency alert"
     Then I see the text "Alert is in standby"
-    Then I see the text "SMS"
-    Then I see the text "Twitter"
+    Then I see the text "SMS settings"
+    Then I see the text "Twitter settings"
 
   Scenario: Verify that SMSSettingsActivity is opened on SMS click
-    Given I press "SMS"
+    Given I press "SMS settings"
     Then I wait upto 10 seconds for the "SMSSettingsActivity" screen to appear
 
 
