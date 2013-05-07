@@ -1,7 +1,7 @@
 @settings
 Feature: Facade and Settings page
 
-  Background: Open settings from facade
+  Scenario: Activate the App
     Given I press view with id "panic_button_text"
     And I press "Start"
     And I enter "123456789" into input field number 1
@@ -17,8 +17,24 @@ Feature: Facade and Settings page
     Then I see the text "SMS settings"
     Then I see the text "Twitter settings"
 
+  Scenario: Verify that Activate alert button is active
+    Given I long press "="
+    Then I see the text "Send emergency alert"
+    Then I verify "activate_alert" button is "enabled"
+
   Scenario: Verify that SMSSettingsActivity is opened on SMS click
-    Given I press "SMS settings"
+    Given I long press "="
+    And I press "SMS settings"
     Then I wait upto 10 seconds for the "SMSSettingsActivity" screen to appear
+
+  Scenario: Verify that TwitterSettingsActivity is opened on Twitter click
+    Given I long press "="
+    And I press "Twitter Settings"
+    Then I wait upto 10 seconds for the "TwitterSettingsActivity" screen to appear
+
+#  Scenario: Verify the back button takes user to Facade
+#    Given I long pres "="
+#    When I press view with id "sms_previous_button"
+#    Then I wait upto 10 seconds for the "CalculatorActivity" screen to appear
 
 
