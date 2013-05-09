@@ -3,7 +3,7 @@ Feature: SMS Settings page
 
   @clear_sms
   Scenario: Open the SMS Settings page
-    Given I press view with id "panic_button_text"
+    Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
     And I enter "123456789" into input field number 1
     And I press "Save"

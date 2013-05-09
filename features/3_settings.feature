@@ -2,7 +2,7 @@
 Feature: Facade and Settings page
 
   Scenario: Activate the App
-    Given I press view with id "panic_button_text"
+    Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
     And I enter "123456789" into input field number 1
     And I press "Save"

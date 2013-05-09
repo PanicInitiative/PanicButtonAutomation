@@ -2,8 +2,7 @@
 Feature: One time setup wizard
 
   Background: Start the wizard
-    Given I press view with id "panic_button_text"
-    Then I wait upto 15 seconds for the "WizardActivity" screen to appear
+    Given I wait upto 10 seconds for the "WizardActivity" screen to appear
 
   Scenario: Starting wizard shows SMS Settings
     Given I press "Start"
