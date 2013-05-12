@@ -36,16 +36,16 @@ Feature: SMS Settings page
     Then I see the text "**********22"
     Then I see the text "*00"
     Then I see the text "Help me, I'm in danger testing message"
-    Then I see the text "Characters left:"
+    Then I see the text "Characters:"
     Then I see the text "47"
 
-  Scenario: Display characters left for message
+  Scenario: Display characters for message
     Given I long press "="
     And I press "SMS settings"
-    And I see the text "Characters left:"
+    And I see the text "Characters"
     And I see the text "47"
     When I enter text " some testing message" into field with id "message_edit_text"
-    Then I see the text "Characters left:"
+    Then I see the text "Characters"
     Then I see the text "26"
 
   Scenario: Clear SMS to disable Alert activation
