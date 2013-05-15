@@ -70,3 +70,18 @@ Feature: Twitter Settings page
     Then I see the text "Yemen"
     Then I see the text "MTN"
     Then I see the text "7070"
+
+  @changing_saved_settings
+  Scenario: Changing saves new twitter options
+    Given I long press "="
+    And I press "Twitter settings"
+    And I press "Post alert to Twitter via SMS"
+    And I select "Sweden" from "CountrySpinner"
+    And I wait for 5 seconds
+    And I select "3" from "ServiceProviderSpinner"
+    And I press "Save"
+    And I go back
+    And I press "Twitter settings"
+    Then I see the text "Sweden"
+    Then I see the text "3"
+    Then I see the text "71017"
