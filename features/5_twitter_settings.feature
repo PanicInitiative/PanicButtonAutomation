@@ -85,3 +85,17 @@ Feature: Twitter Settings page
     Then I see the text "Sweden"
     Then I see the text "3"
     Then I see the text "71017"
+
+  @changing_but_disabling_saves_old_settings
+  Scenario: Changing settings to invalid option but disabling should keep old values
+    Given I long press "="
+    And I press "Twitter settings"
+    And I wait for 5 seconds
+    And I select "Other phone service" from "ServiceProviderSpinner"
+    And I press "Post alert to Twitter via SMS"
+    And I press "Save"
+    And I go back
+    And I press "Twitter settings"
+    Then I should not see "Sweden"
+    Then I should not see "3"
+    Then I should not see "71017"
