@@ -34,7 +34,7 @@ Feature: Facade and Settings page
     Then I wait upto 10 seconds for the "TwitterSettingsActivity" screen to appear
 
 #  Scenario: Verify the back button takes user to Facade
-#    Given I long pres "="
+#    Given I long press "="
 #    When I press view with id "sms_previous_button"
 #    Then I wait upto 10 seconds for the "CalculatorActivity" screen to appear
 
