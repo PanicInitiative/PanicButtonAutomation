@@ -4,7 +4,8 @@ Feature: Facade and Settings page
   Scenario: Activate the App
     Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
-    And I enter "123456789" into input field number 1
+    And I press "Save"
+    And I enter "123456789" into contact field 0
     And I press "Save"
     And I press "Next"
     And I press "Next"

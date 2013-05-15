@@ -6,6 +6,7 @@ Feature: One time setup wizard
 
   Scenario: Starting wizard shows SMS Settings
     Given I press "Start"
+    Then I press "Save"
     Then I verify action button text is "Save"
     Then I verify action button is "disabled"
     Then I see the text "Next, setup the SMS alert"
@@ -18,7 +19,7 @@ Feature: One time setup wizard
     Then I see the text "http://maps.google.com/GPS-location"
 
   @hardware_back
-  Scenario: Hardware back from sms screen takes back to start
+  Scenario: Hardware back in wizard takes back to previous screen
     Given I press "Start"
     And I go back
     Then I see the text "Panic Button"
@@ -34,26 +35,30 @@ Feature: One time setup wizard
 
   Scenario: Starting wizard and entering valid phone number enables saving
     Given I press "Start"
-    And I enter "12345" into input field number 1
+    And I press "Save"
+    And I enter "123456" into contact field 0
     Then I verify action button is "enabled"
 
   Scenario: Starting wizard and entering invalid phone number does not enable saving
     Given I press "Start"
-    And I enter "1234" into input field number 1
+    And I press "Save"
+    And I enter "1234" into contact field 0
     Then I verify action button is "disabled"
 
   Scenario: Starting wizard and entering one valid phone number enables saving
     Given I press "Start"
-    And I enter "123" into input field number 1
-    And I enter "1234" into input field number 2
-    And I enter "12345" into input field number 3
+    And I press "Save"
+    And I enter "123" into contact field 0
+    And I enter "1234" into contact field 1
+    And I enter "12345" into contact field 2
     Then I verify action button is "enabled"
 
   Scenario: Save SMS settings
     Given I press "Start"
-    And I enter "123456789" into input field number 1
-    And I enter "222-222-2222" into input field number 2
-    And I enter "100" into input field number 3
+    And I press "Save"
+    And I enter "123456789" into contact field 0
+    And I enter "222-222-2222" into contact field 1
+    And I enter "100" into contact field 2
     And I press "Save"
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
@@ -62,12 +67,10 @@ Feature: One time setup wizard
 
   Scenario: Verifying the saved sms settings
     Given I press "Start"
-    And I clear input field number 1
-    And I enter "123456789" into input field number 1
-    And I clear input field number 2
-    And I enter "222-222-2222" into input field number 2
-    And I clear input field number 3
-    And I enter "100" into input field number 3
+    And I press "Save"
+    And I enter "123456789" into contact field 0
+    And I enter "222-222-2222" into contact field 1
+    And I enter "100" into contact field 2
     And I enter text " testing message" into field with id "message_edit_text"
     And I press "Save"
     And I press view with id "previous_button"
@@ -81,6 +84,7 @@ Feature: One time setup wizard
   Scenario: Emergency alert 2
     Given I press "Start"
     And I press "Save"
+    And I press "Save"
     And I press "Next"
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
@@ -89,6 +93,7 @@ Feature: One time setup wizard
 
   Scenario: Emergency alert 3
     Given I press "Start"
+    And I press "Save"
     And I press "Save"
     And I press "Next"
     And I press "Next"
@@ -100,6 +105,7 @@ Feature: One time setup wizard
   Scenario: Finish wizard
     Given I press "Start"
     And I press "Save"
+    And I press "Save"
     And I press "Next"
     And I press "Next"
     And I press "Next"
@@ -108,6 +114,7 @@ Feature: One time setup wizard
 
   Scenario: Open facade
     Given I press "Start"
+    And I press "Save"
     And I press "Save"
     And I press "Next"
     And I press "Next"

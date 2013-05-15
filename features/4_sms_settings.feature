@@ -5,7 +5,8 @@ Feature: SMS Settings page
   Scenario: Open the SMS Settings page
     Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
-    And I enter "123456789" into input field number 1
+    And I press "Save"
+    And I enter "123456789" into contact field 0
     And I press "Save"
     And I press "Next"
     And I press "Next"
@@ -19,9 +20,9 @@ Feature: SMS Settings page
     Given I long press "="
     And I press "SMS settings"
     And I clear input field number 1
-    And I enter "123456789" into input field number 1
-    And I enter "222-222-2222" into input field number 2
-    And I enter "100" into input field number 3
+    And I enter "123456789" into contact field 0
+    And I enter "222-222-2222" into contact field 1
+    And I enter "100" into contact field 2
     And I enter text " testing message" into field with id "message_edit_text"
     When I press "Save"
     Then I see the text "*******89"
