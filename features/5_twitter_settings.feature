@@ -5,7 +5,7 @@ Feature: Twitter Settings page
   Scenario: Open the Twitter Settings page
     Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
-    And I enter "abcdEF1 " into input field number 1
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123456789" into contact field 0
     And I press "Save"

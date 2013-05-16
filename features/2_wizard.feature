@@ -6,6 +6,7 @@ Feature: One time setup wizard
 
   Scenario: Starting wizard shows SMS Settings
     Given I press "Start"
+    Then I enter text "abcd EF1" into field with id "create_password_edittext"
     Then I press "Save"
     Then I verify action button text is "Save"
     Then I verify action button is "disabled"
@@ -35,18 +36,21 @@ Feature: One time setup wizard
 
   Scenario: Starting wizard and entering valid phone number enables saving
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123456" into contact field 0
     Then I verify action button is "enabled"
 
   Scenario: Starting wizard and entering invalid phone number does not enable saving
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "1234" into contact field 0
     Then I verify action button is "disabled"
 
   Scenario: Starting wizard and entering one valid phone number enables saving
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123" into contact field 0
     And I enter "1234" into contact field 1
@@ -55,6 +59,7 @@ Feature: One time setup wizard
 
   Scenario: Save SMS settings
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123456789" into contact field 0
     And I enter "222-222-2222" into contact field 1
@@ -67,6 +72,7 @@ Feature: One time setup wizard
 
   Scenario: Verifying the saved sms settings
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123456789" into contact field 0
     And I enter "222-222-2222" into contact field 1
@@ -83,6 +89,7 @@ Feature: One time setup wizard
 
   Scenario: Emergency alert 2
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I press "Save"
     And I press "Next"
@@ -93,6 +100,7 @@ Feature: One time setup wizard
 
   Scenario: Emergency alert 3
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I press "Save"
     And I press "Next"
@@ -104,6 +112,7 @@ Feature: One time setup wizard
 
   Scenario: Finish wizard
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I press "Save"
     And I press "Next"
@@ -114,6 +123,7 @@ Feature: One time setup wizard
 
   Scenario: Open facade
     Given I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I press "Save"
     And I press "Next"

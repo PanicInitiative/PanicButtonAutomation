@@ -4,6 +4,7 @@ Feature: Facade and Settings page
   Scenario: Activate the App
     Given I wait upto 10 seconds for the "WizardActivity" screen to appear
     And I press "Start"
+    And I enter text "abcd EF1" into field with id "create_password_edittext"
     And I press "Save"
     And I enter "123456789" into contact field 0
     And I press "Save"
