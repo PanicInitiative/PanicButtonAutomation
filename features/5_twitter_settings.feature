@@ -14,12 +14,16 @@ Feature: Twitter Settings page
     And I press "Next"
     And I press "Finish & activate disguise"
     And I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     Then I wait upto 10 seconds for the "TwitterSettingsActivity" screen to appear
 
   @other_phone_service
   Scenario: Select Other Phone Service Hides Message
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     And I select "Yemen" from "CountrySpinner"
@@ -30,6 +34,8 @@ Feature: Twitter Settings page
   @save_twitter_settings
   Scenario: Save Twitter settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     And I select "Yemen" from "CountrySpinner"
@@ -46,6 +52,8 @@ Feature: Twitter Settings page
   @hide_twitter_option
   Scenario: Unchecking Twitter Option Hides Twitter Settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     Then I should not see "Yemen"
@@ -54,6 +62,8 @@ Feature: Twitter Settings page
   @disable_twitter_option
   Scenario: Disabling and saving hides Twitter settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     And I press "Save"
@@ -65,6 +75,8 @@ Feature: Twitter Settings page
   @disabled_retains_twitter_options
   Scenario: Enabling displays retained Twitter settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     Then I see the text "Yemen"
@@ -74,6 +86,8 @@ Feature: Twitter Settings page
   @changing_saved_settings
   Scenario: Changing saves new twitter options
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
     And I select "Sweden" from "CountrySpinner"
@@ -89,6 +103,8 @@ Feature: Twitter Settings page
   @changing_but_disabling_saves_old_settings
   Scenario: Changing settings to invalid option but disabling should keep old values
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "Twitter settings"
     And I wait for 5 seconds
     And I select "Other phone service" from "ServiceProviderSpinner"

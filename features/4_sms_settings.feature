@@ -14,11 +14,15 @@ Feature: SMS Settings page
     And I press "Next"
     And I press "Finish & activate disguise"
     And I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "SMS settings"
     Then I wait upto 10 seconds for the "SMSSettingsActivity" screen to appear
 
   Scenario: Save SMS settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "SMS settings"
     And I clear input field number 1
     And I enter "123456789" into contact field 0
@@ -33,6 +37,8 @@ Feature: SMS Settings page
 
   Scenario: View Saved Settings
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "SMS settings"
     Then I see the text "*******89"
     Then I see the text "**********22"
@@ -43,6 +49,8 @@ Feature: SMS Settings page
 
   Scenario: Display characters for message
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "SMS settings"
     And I see the text "Characters"
     And I see the text "47"
@@ -52,6 +60,8 @@ Feature: SMS Settings page
 
   Scenario: Clear SMS to disable Alert activation
     Given I long press "="
+    Then I enter text "abcd EF1" into field with id "password_edit_text"
+    Then I press "Enter"
     And I press "SMS settings"
     And I clear input field number 1
     And I clear input field number 2
