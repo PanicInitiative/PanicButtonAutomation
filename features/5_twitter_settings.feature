@@ -90,15 +90,15 @@ Feature: Twitter Settings page
     Then I press "Enter"
     And I press "Twitter settings"
     And I press "Post alert to Twitter via SMS"
-    And I select "Sweden" from "CountrySpinner"
+    And I select "United Arab Emirates" from "CountrySpinner"
     And I wait for 5 seconds
-    And I select "3" from "ServiceProviderSpinner"
+    And I select "du" from "ServiceProviderSpinner"
     And I press "Save"
     And I go back
     And I press "Twitter settings"
-    Then I see the text "Sweden"
-    Then I see the text "3"
-    Then I see the text "71017"
+    Then I see the text "United Arab Emirates"
+    Then I see the text "du"
+    Then I see the text "8080"
 
   @changing_but_disabling_saves_old_settings
   Scenario: Changing settings to invalid option but disabling should keep old values
@@ -112,6 +112,6 @@ Feature: Twitter Settings page
     And I press "Save"
     And I go back
     And I press "Twitter settings"
-    Then I should not see "Sweden"
-    Then I should not see "3"
-    Then I should not see "71017"
+    Then I should not see "United Arab Emirates"
+    Then I should not see "du"
+    Then I should not see "8080"

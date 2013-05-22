@@ -58,7 +58,8 @@ Feature: SMS Settings page
     Then I see the text "Characters"
     Then I see the text "26"
 
-  Scenario: Clear SMS to disable Alert activation
+
+  Scenario: Verify no save without valid number
     Given I long press "="
     Then I enter text "abcd EF1" into field with id "password_edit_text"
     Then I press "Enter"
@@ -66,8 +67,10 @@ Feature: SMS Settings page
     And I clear input field number 1
     And I clear input field number 2
     And I clear input field number 3
-    And I clear input field number 4
-    And I press "Save"
-    When I press view with id "sms_previous_button"
-    Then I verify "activate_alert" button is "disabled"
-    Then I see the text "Alert cannot be sent. please choose contacts"
+    Then I verify "sms_save_button" button is "disabled"
+
+#    And I clear input field number 4
+#    And I press "Save"
+#    When I press view with id "sms_previous_button"
+#    Then I verify "activate_alert" button is "disabled"
+#    Then I see the text "Alert cannot be sent. please choose contacts"
