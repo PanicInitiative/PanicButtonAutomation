@@ -32,7 +32,7 @@ Feature: One time setup wizard
     Then I verify action button text is "Save"
     Then I verify action button is "disabled"
     Then I see the text "Next, setup the SMS alert"
-    Then I see the text "Add upto three emergency contacts"
+    Then I see the text "Add up to three emergency contacts"
     Then I see the text "Help me, I'm in danger"
     Then I see the text "Emergency message"
     Then I see the text "Characters:"
