@@ -89,7 +89,7 @@ Feature: One time setup wizard
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
     Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "The Emergency Alert button in Settings..."
+    Then I see the text "The Emergency Alert button in Settings"
 
   Scenario: Verifying the saved sms settings
     Given I press "Start"
@@ -117,7 +117,7 @@ Feature: One time setup wizard
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
     Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "From any button on the app’s disguise..."
+    Then I see the text "From any button on the app’s disguise"
 
   Scenario: Emergency alert 3
     Given I press "Start"
@@ -129,7 +129,7 @@ Feature: One time setup wizard
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
     Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "Using the phone’s Power button..."
+    Then I see the text "Using the phone’s Power button"
 
   Scenario: Finish wizard
     Given I press "Start"
