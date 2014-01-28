@@ -17,8 +17,8 @@ Feature: One time setup wizard
     Given I press "Take me to the training"
     Then I see the text "Panic Button Training"
     Then I press "Next"
-    Then I see the text "Step 1"
 
+    Then I see the text "Step 1"
     Then I enter text "123 " into field with id "create_pin_edittext"
     Then I verify action button is "disabled"
     Then I clear input field number 1
@@ -28,19 +28,21 @@ Feature: One time setup wizard
     Then I see the text "Step 2"
 
   Scenario: SMS Settings
-    Given I press "Start"
-    Then I enter text "abcd EF1" into field with id "create_password_edittext"
-    Then I press "Save"
-    Then I verify action button text is "Save"
+    Given I press "Take me to the training"
+    Then I see the text "Panic Button Training"
+    Then I press "Next"
+
+    Then I see the text "Step 1"
+    Then I enter text "1234" into field with id "create_pin_edittext"
+    Then I press "Next"
+
+    Then I see the text "Step 2"
+    Then I press "I understand, set-up my trusted contacts now"
+
+    Then I see the text "Step 2: Set-up your trusted contacts"
+    Then I verify action button text is "Next"
     Then I verify action button is "disabled"
-    Then I see the text "Next, setup the SMS alert"
-    Then I see the text "Add up to three emergency contacts"
-    Then I see the text "Help me, I'm in danger"
-    Then I see the text "Emergency message"
-    Then I see the text "Characters:"
-    Then I see the text "63"
-    Then I see the text "I'm at"
-    Then I see the text "http://maps.google.com/GPS-location"
+    Then I see the text "Think first! Your trusted contacts should be people that you know personally and should be prepared and able to respond fast."
 
   @hardware_back
   Scenario: Hardware back in wizard takes back to previous screen
