@@ -15,8 +15,8 @@ Feature: One time setup wizard
   @validpassword
   Scenario: Validating pin password
     Given I press "Take me to the training"
-    Then I see the text "Panic Button Training"
-    Then I press "Next"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
 
     Then I see the text "Step 1"
     Then I enter text "123 " into field with id "create_pin_edittext"
@@ -29,15 +29,15 @@ Feature: One time setup wizard
 
   Scenario: SMS Settings
     Given I press "Take me to the training"
-    Then I see the text "Panic Button Training"
-    Then I press "Next"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
 
-    Then I see the text "Step 1"
-    Then I enter text "1234" into field with id "create_pin_edittext"
-    Then I press "Next"
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
 
-    Then I see the text "Step 2"
-    Then I press "I understand, set-up my trusted contacts now"
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
 
     Then I see the text "Step 2: Set-up your trusted contacts"
     Then I verify action button text is "Next"
@@ -46,82 +46,139 @@ Feature: One time setup wizard
 
   @hardware_back
   Scenario: Hardware back in wizard takes back to previous screen
-    Given I press "Start"
+    Given I press "Take me to the training"
     And I go back
     Then I see the text "Panic Button"
-    Then I see the text "setup wizard"
-    Then I verify action button text is "Start"
+    Then I see the text "Welcome"
+    Then I verify action button text is "Take me to the training"
     Then I verify action button is "enabled"
 
   Scenario: Navigating back to start screen
-    Given I press "Start"
+    Given I press "Take me to the training"
     And I press view with id "previous_button"
-    Then I verify action button text is "Start"
+    Then I see the text "Panic Button"
+    Then I see the text "Welcome"
+    Then I verify action button text is "Take me to the training"
     Then I verify action button is "enabled"
 
   Scenario: Starting wizard and entering valid phone number enables saving
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
+
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I enter "123456" into contact field 0
     Then I verify action button is "enabled"
 
   Scenario: Starting wizard and entering invalid phone number does not enable saving
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
+
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I enter "1234" into contact field 0
     Then I verify action button is "disabled"
 
   Scenario: Starting wizard and entering one valid phone number enables saving
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
+
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I enter "123" into contact field 0
     And I enter "1234" into contact field 1
     And I enter "12345" into contact field 2
     Then I verify action button is "enabled"
 
   Scenario: Save SMS settings
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
+
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I enter "123456789" into contact field 0
     And I enter "222-222-2222" into contact field 1
     And I enter "100" into contact field 2
-    And I press "Save"
-    Then I verify action button text is "Next"
+    Then I press "Next"
+
+    Then I see the text "Step 3"
+    Then I verify action button text is "I understand, write my message now"
     Then I verify action button is "enabled"
-    Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "The Emergency Alert button in Settings"
 
   Scenario: Verifying the saved sms settings
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I see the text "Panic Button Training"
+    And  I press "Next"
+
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I enter "123456789" into contact field 0
     And I enter "222-222-2222" into contact field 1
     And I enter "100" into contact field 2
-    And I enter text " testing message" into field with id "message_edit_text"
-    And I press "Save"
+    And I press "Next"
+
+    And I see the text "Step 3"
     And I press view with id "previous_button"
-    Then I verify action button text is "Save"
+    Then I see the text "Step 2: Set-up your trusted contacts"
     Then I verify action button is "enabled"
     Then I see the text "*******89"
     Then I see the text "**********22"
     Then I see the text "*00"
-    Then I see the text "Help me, I'm in danger testing message"
 
   Scenario: Emergency alert 2
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I press "Next"
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I press "Next"
+
+    And I see the text "Step 3"
+    And I press "I understand, write my message now"
+
+    Then I see the text "Step 3: Create an emergency message"
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
-    Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "From any button on the app’s disguise"
+    Then I see the text "Help me, I'm in danger"
 
   Scenario: Emergency alert 3
     Given I press "Start"
