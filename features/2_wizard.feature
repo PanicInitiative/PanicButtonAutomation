@@ -2,28 +2,30 @@
 Feature: One time setup wizard
 
   Background: Start the wizard
-    Given I wait upto 10 seconds for the "WizardActivity" screen to appear
+    Given I wait upto 30 seconds for the "WizardActivity" screen to appear
 
   @passwordscreen
   Scenario: Starting wizard shows password entry screen
-    Given I press "Start"
-    Then I see the text "First, set a password"
-    Then I see the text "create a password"
+    Given I press "Take me to the training"
+    Then I see the text "Panic Button Training"
+    Then I press "Next"
+    Then I see the text "Step 1"
     Then I verify action button is "disabled"
 
   @validpassword
-  Scenario: Validating password
-    Given I press "Start"
-    Then I enter text "Abcd12 " into field with id "create_password_edittext"
+  Scenario: Validating pin password
+    Given I press "Take me to the training"
+    Then I see the text "Panic Button Training"
+    Then I press "Next"
+    Then I see the text "Step 1"
+
+    Then I enter text "123 " into field with id "create_pin_edittext"
     Then I verify action button is "disabled"
     Then I clear input field number 1
-    Then I enter text "abcdefgh" into field with id "create_password_edittext"
+    Then I enter text "1234" into field with id "create_pin_edittext"
     Then I verify action button is "enabled"
-    Then I press "Save"
-    Then I see the text "Password must contain at least one lowercase, one uppercase, one number, and one space"
-    Then I enter text "abcd EF1" into field with id "create_password_edittext"
-    Then I press "Save"
-    Then I see the text "Next, setup the SMS alert"
+    Then I press "Next"
+    Then I see the text "Step 2"
 
   Scenario: SMS Settings
     Given I press "Start"
