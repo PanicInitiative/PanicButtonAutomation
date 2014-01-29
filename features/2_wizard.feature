@@ -159,7 +159,7 @@ Feature: One time setup wizard
     Then I see the text "**********22"
     Then I see the text "*00"
 
-  Scenario: Emergency alert 2
+  Scenario: Emergency alert set message
     Given I press "Take me to the training"
     And  I press "Next"
     And  I see the text "Step 1"
@@ -179,37 +179,94 @@ Feature: One time setup wizard
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
     Then I see the text "Help me, I'm in danger"
+    Then I see the text "I'm at http://maps.google.com/GPS-location"
 
-  Scenario: Emergency alert 3
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
-    And I press "Save"
+
+  Scenario: Emergency alert 1-2-3
+    Given I press "Take me to the training"
+    And  I press "Next"
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I press "Next"
+
+    And I see the text "Step 3"
+    And I press "I understand, write my message now"
     And I press "Next"
+
+    And I see the text "Step 3: Create an emergency message"
+    And I press "Next"
+
+    Then I see the text "3 ways to send an emergency alert"
     Then I verify action button text is "Next"
     Then I verify action button is "enabled"
-    Then I see the text "3 ways to send an emergency alert"
-    Then I see the text "Using the phone’s Power button"
+    Then I see the text "#1. The Emergency Alert button in Settings…"
+    Then I press "Next"
+    Then I see the text "#2. From any button on the app’s disguise…"
+    Then I press "Next"
+    Then I see the text "#3. Using the phone’s Power button…"
+
+
 
   Scenario: Finish wizard
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I press "Next"
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
     And I press "Next"
+
+    And I see the text "Step 3"
+    And I press "I understand, write my message now"
     And I press "Next"
+
+    And I see the text "Step 3: Create an emergency message"
     And I press "Next"
+
+    And I see the text "3 ways to send an emergency alert"
+    Then I press "Next"
+    Then I press "Next"
+    Then I see the text "Step 5: Activate Disguise"
+    Then I verify action button text is "Try it now"
+    Then I press "Try it now"
     Then I see the text "Panic Button will now disguise itself"
-    Then I see the text "Finish & activate disguise"
+
+
 
   Scenario: Open facade
-    Given I press "Start"
-    And I enter text "abcd EF1" into field with id "create_password_edittext"
-    And I press "Save"
-    And I press "Save"
+    Given I press "Take me to the training"
+    And  I press "Next"
+    And  I see the text "Step 1"
+    And  I enter text "1234" into field with id "create_pin_edittext"
+    And  I press "Next"
+
+    And  I see the text "Step 2"
+    And  I press "I understand, set-up my trusted contacts now"
+
+    And I see the text "Step 2: Set-up your trusted contacts"
+    And I press "Next"
+
+    And I see the text "Step 3"
+    And I press "I understand, write my message now"
+    And I press "Next"
+
+    And I see the text "Step 3: Create an emergency message"
+    And I press "Next"
+
+    And I see the text "3 ways to send an emergency alert"
     And I press "Next"
     And I press "Next"
-    And I press "Next"
+    And I see the text "Step 5: Activate Disguise"
+    And I press "Try it now"
     And I press "Finish & activate disguise"
     Then I wait upto 10 seconds for the "CalculatorActivity" screen to appear
